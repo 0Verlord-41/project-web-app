@@ -7,13 +7,20 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   <title>WebApp</title>
+  <style>
+  #header{
+    background: url("jumboback.jpeg") center center / cover no-repeat;
+  }
+  </style>
 
 </head>
 <body>
 
 
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background: #f06b54;">
+    <div class="container">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,26 +47,30 @@
       </li>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+  </div>
   </div>
 </nav>
 
-  <div class="container">
-    <h1 class="text-center display-3">Licious</h1>
+<section id="header" class="jumbotron text-center">
+  <h1 class="display-3" style="color: white;">Licious</h1>
+  <p class="lead" style="color: white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, facilis eos cupiditate excepturi assumenda necessitatibus.</p>
+  <a href="#" class="btn btn-primary mr-3">Sign up</a>
+  <a href="#" class="btn btn-primary ml-3">Sign in</a>
+</section>
 
-  </div>
-
-<div class="container-fluid">
-  <div class="jumbotron jumbotron-fluid">
+<section id="gallery">
   <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim quis nesciunt laborum itaque omnis, impedit, eum voluptatum aliquid cumque deserunt quam eligendi sapiente, quas, iure inventore autem similique. Perferendis.</p>
+  <div class="card">
+    <img src="pexels-photo-1640773.jpeg" class="card-img-top" alt="">
+    <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
   </div>
-</div>
+  </div>
+</section>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
