@@ -1,0 +1,57 @@
+
+
+body {
+background: #;
+font-family: 'Nunito', sans-serif ;
+}
+
+.blurb h2{
+  color: #7d48e3;
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+
+.blurb p{
+  color: #9d3fc4;
+  font-weight: 100;
+  font-size: 1.125rem;
+  line-height: 2;
+}
+
+#mainnav {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+#mainnav .navbar-brand {
+  color: white;
+}
+
+#mainnav .nav-link {
+  color: white;
+}
+
+#mainnav .nav-link:hover {
+  color: ;
+}
+
+#header{
+  background: url("jumboback.jpeg") center center / cover no-repeat;
+}
+
+#headinggroup h2{
+  font-weight: 100;
+  font-size: 3.8rem;
+}
+
+.navbar.scrolled{
+  background: rgb(245, 66, 96);
+  transition: background 200ms;
+}
+
+@media (max-width: 1200px) {
+  #headinggroup h2{
+    font-weight: 100;
+    font-size: 3rem;
+  }
+}
