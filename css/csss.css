@@ -6,6 +6,12 @@ font-family: 'Nunito', sans-serif ;
 z-index: -1;
 }
 
+.icon {
+            width: 2.5rem;
+            height: 2.5rem;
+
+        }
+
 .blurb h2{
   color: #7d48e3;
   font-weight: 100;
@@ -25,6 +31,8 @@ z-index: -1;
 }
 
 #mainnav .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 100;
   color: white;
 }
 
@@ -53,6 +61,12 @@ z-index: -1;
   box-shadow: 2px 2px 2px 2px #f0a8a3 ; /*mb-5 bg-white rounded */
   padding: 3px 3px ;
   border: ;
+}
+
+#footer {
+  background-color: rgb(245, 66, 96);
+  padding-top: 50px;
+  font-size: 2rem;
 }
 
 .navbar.scrolled{
