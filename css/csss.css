@@ -1,4 +1,8 @@
-
+html, body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 
 body {
 background: url("") no-repeat fixed ;
@@ -63,10 +67,36 @@ z-index: -1;
   border: ;
 }
 
+/* footer */
+
 #footer {
-  background-color: rgb(245, 66, 96);
+  background-color: #08192b;
+  color: #d3d3d3;
   padding-top: 50px;
   font-size: 2rem;
+  height: 400px;
+  position: relative;
+}
+
+.page-wrapper {
+  min-height: 100%;
+}
+
+#footer .footer-content {
+  border: 1px solid green;
+  height: 350px;
+}
+
+#footer .footer-bottom {
+  background-color: #343a40;
+  color: #686868;
+  height: 50px;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-top: ;
+  width: 100%;
 }
 
 .navbar.scrolled{
