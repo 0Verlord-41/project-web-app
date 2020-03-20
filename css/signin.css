@@ -2,10 +2,12 @@ body{
   margin: 0;
   padding: 0;
   background: #efefef;
+  /* background-image: url("Web 1920.png") ; */
   font-size: 16px;
   color: #777;
   font-family: sans-serfif;
   font weight: 300;
+
 }
 
 #loginbox{
@@ -78,7 +80,8 @@ input[type="password"]
   padding: 40px;
   width: 300px;
   height: 400px;
-  background-image: url("");
+  /* background-image: url(""); */
+  background-image: url("Web 1920.png") ;
   background-size: cover;
   background-position: center;
 }
@@ -104,6 +107,11 @@ input[type="password"]
   color: #fff;
   text-align: center;
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.rightbox .flex-container{
+  display: flex;
+  flex-direction: column;
 }
 
 button.social{
