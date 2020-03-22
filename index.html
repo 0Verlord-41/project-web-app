@@ -16,7 +16,9 @@
 </head>
 <body>
 
+<div class="wrapper" id="wrapper">
 
+<!-- navigation bar start -->
   <nav id="mainnav" class="navbar navbar-dark navbar-expand-md py-0 fixed-top scrolled">
   <a href="index.html" class="navbar-brand">
     <img class="icon mr-3" src="icons/dish.png" alt="">
@@ -25,16 +27,35 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navlinks">
-    <ul class="navbar-nav">
+    <ul class="nav justify-content-center">
       <li class="nav-item">
         <a href="" class="nav-link">HOME</a>
       </li>
       <li class="nav-item">
         <a href="" class="nav-link">ABOUT</a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+        <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Menu list</a>
+        <a class="dropdown-item" href="#">Menu details</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link">Pages</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link">Contact</a>
+      </li>
     </ul>
+
   </div>
   </nav>
+
+  <!-- navigation bar end -->
+
 
   <section class="container-fluid px-0">
     <div class="row align-items-center content">
@@ -46,11 +67,21 @@
           <div class="col-10 col-lg-8 blurb mb-5 mb-m-0">
           <h2>Order what you LOVE !</h2>
           <p class="lead"></p>
+<!-- search restaurant field  -->
+          <div class="slider__input">
+              <input type="text" placeholder="Type Place, City, Division">
+              <input class="res__search" type="text" placeholder="Restaurant">
+              <div class="src__btn">
+                  <a href="#">Search</a>
+              </div>
+          </div>
+<!-- search restaurant field end -->
           </div>
         </div>
         </div>
     </div>
   </section>
+
 
 <!-- <section id="header" class="jumbotron text-center">
   <h1 class="display-3" style="color: white;">Licious</h1>
@@ -59,6 +90,8 @@
   <a href="#" class="btn btn-primary ml-3">Sign in</a>
 </section> -->
 
+
+<!-- food grid start -->
 <section id="gallery">
   <div class="container">
   <div class="row">
@@ -139,12 +172,138 @@
   </div>
 </section>
 
-<div class="page-wrapper">
+<!-- food grid end -->
 
-</div>
+<!-- try1 start-->
+
+<!-- Start Service Area -->
+<section class="fd__service__area bg-image--2 section-padding--xlg">
+    <div class="container">
+        <div class="service__wrapper bg--white">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="section__title service__align--left">
+                        <p>The process of our service</p>
+                        <h2 class="title__line">How it work</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--30">
+                <!-- Start Single Service -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="service">
+                        <div class="service__title">
+                            <div class="ser__icon">
+                                <img src="images/icon/color-icon/1.png" alt="icon image">
+                            </div>
+                            <h2><a href="service.html">Choose restaurant</a></h2>
+                        </div>
+                        <div class="service__details">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="service">
+                        <div class="service__title">
+                            <div class="ser__icon">
+                                <img src="images/icon/color-icon/2.png" alt="icon image">
+                            </div>
+                            <h2><a href="service.html">Select, you love to eat</a></h2>
+                        </div>
+                        <div class="service__details">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Service -->
+                <!-- Start Single Service -->
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="service">
+                        <div class="service__title">
+                            <div class="ser__icon">
+                                <img src="images/icon/color-icon/3.png" alt="icon image">
+                            </div>
+                            <h2><a href="service.html">Pickup or delivery</a></h2>
+                        </div>
+                        <div class="service__details">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Service -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Service Area -->
+<!-- Start Food Category -->
+<section class="food__category__area bg--white section-padding--lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="section__title service__align--left">
+                    <p>the process of our service</p>
+                    <h2 class="title__line">Search by food category</h2>
+                </div>
+            </div>
+        </div>
+        <div class="food__category__wrapper mt--40">
+            <div class="row">
+                <!-- Start Single Category -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="food__item foo">
+                        <div class="food__thumb">
+                            <a href="menu-details.html">
+                                <img src="images/product/md-product/1.jpg" alt="product images">
+                            </a>
+                        </div>
+                        <div class="food__title">
+                            <h2><a href="menu-details.html">Breakfast Iteam</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Category -->
+                <!-- Start Single Category -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="food__item foo">
+                        <div class="food__thumb">
+                            <a href="menu-details.html">
+                                <img src="images/product/md-product/2.jpg" alt="product images">
+                            </a>
+                        </div>
+                        <div class="food__title">
+                            <h2><a href="menu-details.html">Lunch Iteam</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Category -->
+                <!-- Start Single Category -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="food__item foo">
+                        <div class="food__thumb">
+                            <a href="menu-details.html">
+                                <img src="images/product/md-product/3.jpg" alt="product images">
+                            </a>
+                        </div>
+                        <div class="food__title">
+                            <h2><a href="menu-details.html">Dinner Iteam</a></h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Category -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Food Category -->
+
+<!-- try1 end -->
+
 
 <!-- footer -->
-
 
 <footer id=footer class="body-footer">
   <div class="container">
@@ -173,5 +332,7 @@
     });
   </script>
 
+
+</div>
 </body>
 </html>

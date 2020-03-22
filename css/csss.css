@@ -45,7 +45,7 @@ z-index: -1;
 }
 
 #mainnav .nav-link:hover {
-  color: ;
+  color: #fbbc05;
 }
 
 #header{
@@ -56,6 +56,238 @@ z-index: -1;
   font-weight: 100;
   font-size: 3.8rem;
 }
+
+.slider__input input {
+    background: rgb(245, 66, 96) none repeat scroll 0 0;
+    border: 1px solid rgb(245, 66, 96);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    line-height: 40px;
+    margin: 2px 3px;
+    padding: 1px 30px;
+    width: 400px;
+    outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+
+
+
+/* try1 start */
+.section-padding--xlg {
+    padding: 200px 0;
+}
+
+.bg-image--2 {
+    background-image: url(images/bg/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+article, aside, details, figcaption, figure, footer, header, nav, section, summary {
+    display: block;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.service__wrapper {
+    padding: 100px 35px 100px 95px;
+}
+
+.bg--white {
+    background: #ffffff;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+div {
+    display: block;
+}
+
+.section__title.service__align--left {
+    text-align: left;
+}
+
+.section__title {
+    padding-top: 17px;
+    position: relative;
+}
+
+.section__title p {
+    color: #444444;
+    font-size: 16px;
+}
+
+.section__title .title__line {
+    color: #444444;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-top: 10px;
+}
+
+.service__wrapper .service {
+    margin-top: 30px;
+}
+
+.service__wrapper .service .service__title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.service__wrapper .service .service__title .ser__icon {
+    min-width: 50px;
+}
+
+.service__wrapper .service .service__title .ser__icon img {
+    min-height: 55px;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    vertical-align: middle;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.service__wrapper .service .service__title h2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end;
+    color: #444444;
+    font-size: 22px;
+    padding-left: 15px;
+}
+
+.service__wrapper .service .service__details p {
+    color: #959595;
+    font-size: 14px;
+    padding-right: 10px;
+}
+
+.service__wrapper .service {
+    margin-top: 30px;
+}
+
+.section-padding--lg {
+    padding: 130px 0;
+}
+
+.section__title.service__align--left {
+    text-align: left;
+}
+.section__title {
+    padding-top: 17px;
+    position: relative;
+}
+
+.section__title p {
+    color: #444444;
+    font-size: 16px;
+}
+
+.section__title .title__line {
+    color: #444444;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-top: 10px;
+}
+
+.mt--40 {
+    margin-top: 40px;
+}
+
+.food__category__wrapper .food__item {
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.food__category__wrapper .food__item .food__thumb a {
+    display: block;
+}
+
+.food__category__wrapper .food__item .food__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.food__category__wrapper .food__item .food__title h2 {
+    display: block;
+    position: relative;
+    transform: translateY(0px);
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.food__category__wrapper .food__item .food__title h2 a {
+    color: #fff;
+    font-size: 26px;
+    color: #ffffff;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+@media (min-width: 1200px)
+.container {
+    max-width: 1200px;
+}
+
+@media (min-width: 992px)
+.col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+/* try1 end */
+
+
+
 
 #gallery .card {
  z-index: 2;
@@ -109,6 +341,6 @@ z-index: -1;
   #headinggroup h2{
     font-weight: 100;
     font-size: 3rem;
-    
+
   }
 }
