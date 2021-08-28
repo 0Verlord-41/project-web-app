@@ -1,0 +1,23 @@
+{
+  "name": "project-web-app",
+  "version": "1.0.0",
+  "description": "food order delivery webapp",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0Verlord-41/project-web-app.git"
+  },
+  "author": "Ishwak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0Verlord-41/project-web-app/issues"
+  },
+  "homepage": "https://github.com/0Verlord-41/project-web-app#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
