@@ -6,7 +6,6 @@ const restschema=new mongoose.Schema({
     type:String
   },
   Locations:[{
-   
     coordinates:[Number]
   }],
   Type:{
