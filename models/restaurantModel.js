@@ -3,8 +3,11 @@ const validator = require('validator');
 
 const restschema=new mongoose.Schema({
   name:{
-    type:String
+    type:String,
+    required: [true, 'A restaurant must have a name'],
+    unique: true
   },
+  slug: String,
   Locations:[{
     coordinates:[Number]
   }],
@@ -50,6 +53,17 @@ const restschema=new mongoose.Schema({
     toObjects:{virtuals:true}
 });
 
+restschema.virtual('reviews',{
+  ref:'Review',
+  foreignField:'rest',
+  localField:'_id'
+});
+
+restschema.pre('save', function(next) {
+  this.slug = slugify(this.name, { lower: true });
+  console.log(this.slug);
+  next();
+});
 
 const Rest=mongoose.model('Rest',restschema);
 module.exports=Rest;

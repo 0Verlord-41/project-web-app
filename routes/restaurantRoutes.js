@@ -1,6 +1,19 @@
 const express = require('express');
 const restaurantController = require('./../controllers/restaurantController');
+const authController = require('./../controllers/authController');
+// const reviewController=require('./../controllers/reviewController');
+const reviewRouter = require('./../routes/reviewRoutes');
 const router = express.Router();
+
+// router
+//     .route('/:restId/reviews')
+//     .post(
+//       authController.protect, 
+//       authController.restrictTo('user'), 
+//       reviewController.createReview
+//       );
+
+router.use('/:restId/reviews', reviewRouter);
 
 router
     .route('/top-5')
@@ -14,12 +27,26 @@ router
 router
     .route('/')
     .get(restaurantController.getAllRestaurant)
-    .post(restaurantController.createRestaurant);
+    .post(
+        authController.protect,
+        authController.restrictTo('admin', 'lead-guide'),
+        restaurantController.createRestaurant
+      );
 
 router
     .route('/:id')
-    .get(restaurantController.getRestaurant)
-    .patch(restaurantController.updateRestaurant)
-    .delete(restaurantController.deleteRestaurant);
+    .get( restaurantController.getRestaurant)
+    .patch(
+        authController.protect,
+        authController.restrictTo('admin', 'lead-guide'),
+        // restaurantController.uploadTourImages,
+        // restaurantController.resizeTourImages,
+        restaurantController.updateRestaurant
+      )
+      .delete(
+        authController.protect,
+        authController.restrictTo('admin', 'lead-guide'),
+        restaurantController.deleteRestaurant
+      )
 
 module.exports = router;

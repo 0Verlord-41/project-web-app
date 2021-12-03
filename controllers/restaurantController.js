@@ -1,6 +1,9 @@
 
 const Rest = require('./../models/restaurantModel');
 const RestAPIFeatures = require('../utils/restAPIFeatures');
+const catchAsync = require('./../utils/catchAsync');
+const AppError = require('./../utils/appError');
+const factory=require('./handleFactory');
 
 exports.aliasTopRestaurant = async (req, res, next) => {
     req.query.limit = '5';
@@ -9,104 +12,89 @@ exports.aliasTopRestaurant = async (req, res, next) => {
     next();
 };
 
-exports.getAllRestaurant = async (req, res) => {
+exports.getAllRestaurant = factory.getAll(Rest);
+// exports.getAllRestaurant = catchAsync(async (req, res, next) => {
 
-    try{
-        const features = new RestAPIFeatures(Rest.find(), req.query )
-            .filter()
-            .sort()
-            .limitFields()
-            .paginate();
-        const restaurants = await features.query;
+//         const features = new RestAPIFeatures(Rest.find(), req.query )
+//             .filter()
+//             .sort()
+//             .limitFields()
+//             .paginate();
+//         const restaurants = await features.query;
         
-        res.status(200).json({
-        status: 'success',
-        result: restaurants.length,
-        data: {
-            restaurants
-        }
-    });
-    }catch(err){
-        res.status(404).json({
-            status: 'fail',
-            message: err
-        })
-    }
-};
+//         res.status(200).json({
+//         status: 'success',
+//         result: restaurants.length,
+//         data: {
+//             restaurants
+//         }
+//     });
+// });
 
-exports.getRestaurant = async (req, res) => {
-    try{
-        const restaurant = await Rest.findById(req.params.id);
-        res.status(200).json({
-            status: 'success',
-            data: {
-                restaurant
-            }
-        });
-    }catch(err){
-        res.status(404).json({
-            status: "fail",
-            message: err
-        })
-    }
-};
+exports.getRestaurant = factory.getOne(Rest, { path: 'reviews'});
+// exports.getRestaurant = catchAsync(async (req, res, next) => {
+    
+//         const restaurant = await Rest.findById(req.params.id).populate('reviews');
 
-exports.createRestaurant = async (req, res) => {
+//         if(!restaurant){
+//             return next(new AppError('No tour found with the given ID', 404))
+//         }
+//         res.status(200).json({
+//             status: 'success',
+//             data: {
+//                 restaurant
+//             }
+//         });
+// });
 
-    try{
-        const newRestaurant = await Rest.create(req.body);
+exports.createRestaurant = factory.createOne(Rest);
+// exports.createRestaurant = catchAsync(async (req, res, next) => {
 
-        res.status(201).json({
-            status: 'success',
-            data: {
-                restaurants: newRestaurant
-            }
-        });
-    } catch(err){
-        res.status(400).json({
-            status: "fail",
-            message: err
-        })
-    }
-};
+//     const newRestaurant = await Rest.create(req.body);
 
-exports.updateRestaurant = async (req, res) => {
-    try{
-        const updaterestaurant = await Rest.findByIdAndUpdate(req.params.id, req.body, {
-            new: true,
-            runValidators: true
-        });
-        res.status(200).json({
-            status: 'success',
-            data: {
-                updaterestaurant
-            }
-        });
-    } catch(err){
-        res.status(400).json({
-            status: "fail",
-            message: err
-        })
-    }
-};
+//         res.status(201).json({
+//             status: 'success',
+//             data: {
+//                 restaurants: newRestaurant
+//             }
+//         });
+// });
 
-exports.deleteRestaurant = async (req, res) => {
-    try{
-        await Rest.findByIdAndDelete(req.params.id)
-        res.status(204).json({
-            status: 'success',
-            data: null
-        });
-    }catch(err){
-        res.status(400).json({
-            status: "fail",
-            message: err
-        })
-    }
-};
+exports.updateRestaurant = factory.updateOne(Rest);
+// exports.updateRestaurant = catchAsync(async (req, res, next) => {
 
-exports.getRestaurantStats = async (req, res) => {
-    try{
+//         const updaterestaurant = await Rest.findByIdAndUpdate(req.params.id, req.body, {
+//             new: true,
+//             runValidators: true
+//         });
+
+//         if(!restaurant){
+//             return next(new AppError('No tour found with the given ID', 404))
+//         }
+//         res.status(200).json({
+//             status: 'success',
+//             data: {
+//                 updaterestaurant
+//             }
+//         });
+// });
+
+exports.deleteRestaurant = factory.deleteOne(Rest);
+// exports.deleteRestaurant = catchAsync(async (req, res, next) => {
+
+//         const restaurant = await Rest.findByIdAndDelete(req.params.id)
+
+//         if(!restaurant){
+//             return next(new AppError('No tour found with the given ID', 404))
+//         }
+//         res.status(204).json({
+//             status: 'success',
+//             data: null
+//         });
+// });
+
+exports.getRestaurantStats = catchAsync(async (req, res, next) => {
+
         const stats = await Rest.aggregate([
             {
                 $match: { averagerating: { $gte: 4.5}}
@@ -134,10 +122,4 @@ exports.getRestaurantStats = async (req, res) => {
                 stats
             }
         });
-    }catch(err){
-        res.status(404).json({
-            status: 'fail',
-            message: err
-        })
-    }
-};
+});
