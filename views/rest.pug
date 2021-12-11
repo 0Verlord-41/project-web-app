@@ -1,0 +1,84 @@
+extends base
+
+block append head
+  script(src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet')
+
+mixin reviewCard(review)
+  .reviews__card
+    .reviews__avatar
+      img.reviews__avatar-img(src=`/img/users/${review.user.photo}`, alt=`${review.user.name}`)
+      h6.reviews__user=review.user.name
+    p.reviews__text=review.review
+    .reviews__rating
+      each star in [1, 2, 3, 4, 5]
+        svg.reviews__star(class=`reviews__star--${review.rating>=star?'active':'inactive'}
+        `)
+          use(xlink:href='/img/icons.svg#icon-star')
+
+mixin overviewBox(label, text, icon)
+  .overview-box__detail
+    svg.overview-box__icon
+      use(xlink:href=`/img/icons.svg#icon-${icon}`)
+    span.overview-box__label= label
+    span.overview-box__text= text
+
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+      img.header__hero-img(src=`/img/tours/${rest.images}`, alt=`${rest.name}`)
+
+    .heading-box
+      h1.heading-primary
+        span= `${rest.name} Restaurant`
+
+  section.section-description
+    .overview-box
+      div
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Quick facts
+
+          +overviewBox('Location', rest.Place, 'calendar')
+          +overviewBox('Type', rest.Type, 'trending-up')
+          +overviewBox('Cooks', `${rest.Cooks} cooks`, 'user')
+          +overviewBox('Rating', `${rest.averagerating}`, 'star')
+
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Master Chefs
+          .overview-box__detail
+            img.overview-box__img(src=`/img/chefs/${rest.chefphoto[1]}`, alt=`${rest.Chef}`)
+            span.overview-box__label Lead Chef
+            span.overview-box__text= rest.Chef
+
+    .description-box
+      h2.heading-secondary.ma-bt-lg= `About ${rest.name}`
+      p.description__text= rest.Description
+
+  section.section-pictures
+    each img, i in rest.moreimg
+      .picture-box
+        img.picture-box__img(src=`/img/tours/${img}`, alt=`Restaurant ${i + 1}`,
+        class=`picture-box__img--${i + 1}`)
+
+  section.section-map
+    #map(data-locations=`${JSON.stringify(rest.Locations)}`)
+
+  section.section-reviews
+    .reviews
+      each review in rest.reviews
+        +reviewCard(review)
+
+  section.section-cta
+    .cta
+      .cta__img.cta__img--logo
+        img(src='/img/logo-white.png', alt='Natours logo')
+      img.cta__img.cta__img--1(src=`/img/tours/${rest.moreimg[1]}`, alt='Tour picture')
+      .cta__content
+        h2.heading-secondary What are you waiting for?
+        p.cta__text= `days. 1 adventure. Infinite memories. Make it yours today!`
+        
+        if user
+          button.btn.btn--green.span-all-rows#book-tour(data-tour-id=`${rest.id}`) Book tour now!
+        else
+          a.btn.btn--green.span-all-rows(href='/login') Log in to book tour
