@@ -1,26 +1,26 @@
 /* eslint-disable */
 
-const locations=JSON.parse(document.getElementById('map').dataset.locations);
+export const displayMap = locations => {
+  mapboxgl.accessToken = 'pk.eyJ1IjoieWFyaXRlIiwiYSI6ImNreDF6czBpMzFuNmsydXA4OWR2dDUwY2wifQ.8yrQ5LAF7C28rK63RhRQzw';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoieWFyaXRlIiwiYSI6ImNreDF6czBpMzFuNmsydXA4OWR2dDUwY2wifQ.8yrQ5LAF7C28rK63RhRQzw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/yarite/ckx2udbpo0a2m14lkiyatruwv',
+    center: locations[0].coordinates,
+    zoom: 15
+    ,scrollZoom: false
+  });
 
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/yarite/ckx2udbpo0a2m14lkiyatruwv',
-  center: locations[0].coordinates,
-  zoom: 15
-  ,scrollZoom: false
-});
+  const el = document.createElement('div');
+  el.className = 'marker';
 
-const el = document.createElement('div');
-el.className = 'marker';
-
-new mapboxgl.Marker({
-      element: el,
-      anchor: 'bottom'
-    })
-      .setLngLat(locations[0].coordinates)
-      .addTo(map);
+  new mapboxgl.Marker({
+        element: el,
+        anchor: 'bottom'
+      })
+        .setLngLat(locations[0].coordinates)
+        .addTo(map);
+}
 
 // export const displayMap = locations => {
 //   mapboxgl.accessToken = 'pk.eyJ1IjoieWFyaXRlIiwiYSI6ImNreDF6czBpMzFuNmsydXA4OWR2dDUwY2wifQ.8yrQ5LAF7C28rK63RhRQzw';

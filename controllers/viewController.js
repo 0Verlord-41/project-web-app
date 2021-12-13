@@ -25,3 +25,9 @@ exports.getRest = catchAsync(async (req, res, next) => {
     rest
   });
 });
+
+exports.getLoginForm = (req,res) => {
+  res.status(200).render('login', {
+    title: 'Log into your account'
+  });
+};

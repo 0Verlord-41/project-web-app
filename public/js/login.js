@@ -13,16 +13,16 @@ export const login = async (email, password) => {
       }
     });
 
-    if (res.data.status === 'success') {
+    if(res.data.status==='success'){
       showAlert('success', 'Logged in successfully!');
-      window.setTimeout(() => {
+      window.setTimeout(()=>{
         location.assign('/');
-      }, 1500);
+      }, 2000);
     }
   } catch (err) {
     showAlert('error', err.response.data.message);
   }
-};
+}
 
 export const logout = async () => {
   try {
@@ -35,4 +35,4 @@ export const logout = async () => {
     console.log(err.response);
     showAlert('error', 'Error logging out! Try again.');
   }
-};
+}
