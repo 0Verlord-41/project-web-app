@@ -123,3 +123,27 @@ exports.getRestaurantStats = catchAsync(async (req, res, next) => {
             }
         });
 });
+
+// exports.gettourwithin=async (req,res,next)=>{
+// const {distance,latlng,unit}=req.params;
+// const [lat,lng]=latlng.split(',');
+// const radius=unit==='mi' ? distance/3963.2:distance/6378.1;
+
+// if(!lat || !lng){
+//   console.log("please mention the latitude");
+
+// }
+// console.log(req.query);
+// console.log(req.params);
+// console.log(distance,lat,lng,unit);
+
+// const restaurants=await Rest.find({startLocation:{$geoWithin:{$centerSphere:[[lng,lat],radius]}}});
+// res.status(200).json({
+//   status:"success",
+//   result:rests.length,
+//   data:{
+//     data: rests
+//   }
+//   })
+
+// };
