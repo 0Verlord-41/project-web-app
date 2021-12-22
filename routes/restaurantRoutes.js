@@ -39,8 +39,8 @@ router
     .patch(
         authController.protect,
         authController.restrictTo('admin', 'lead-guide'),
-        // restaurantController.uploadTourImages,
-        // restaurantController.resizeTourImages,
+        restaurantController.uploadRestImages,
+        restaurantController.resizeRestImages,
         restaurantController.updateRestaurant
       )
       .delete(
