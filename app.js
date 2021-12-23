@@ -8,7 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 // const bodyParser = require('body-parser');
-// const compression = require('compression');
+const compression = require('compression');
 // const cors = require('cors');
 
 const AppError = require('./utils/appError');
@@ -16,8 +16,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const restaurantRouter = require('./routes/restaurantRoutes');
 const userRouter = require('./routes/userRoutes')
 const reviewRouter = require('./routes/reviewRoutes');
-// const bookingRouter = require('./routes/bookingRoutes');
-// const bookingController = require('./controllers/bookingController');
+const bookingRouter = require('./routes/bookingRoutes');
 const viewRoutes = require('./routes/viewRoutes');
 
 // Start express app
@@ -99,7 +98,7 @@ app.use(
   })
 );
 
-// app.use(compression());
+app.use(compression());
 
 app.use((req, res, next) => {
     console.log('Hello, its middleware! 🎉');
@@ -113,7 +112,7 @@ app.use('/', viewRoutes);
 app.use('/api/v1/restaurants', restaurantRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
-// app.use('/api/v1/bookings', bookingRouter);
+app.use('/api/v1/bookings', bookingRouter);
 
 app.all('*', (req, res, next)=>{
     // res.status(404).json({

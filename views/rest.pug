@@ -3,6 +3,7 @@ extends base
 block append head
   script(src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js')
   link(href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet')
+  script(src='https://js.stripe.com/v3/')
 
 mixin reviewCard(review)
   .reviews__card
@@ -79,6 +80,6 @@ block content
         p.cta__text= `days. 1 adventure. Infinite memories. Make it yours today!`
         
         if user
-          button.btn.btn--green.span-all-rows#book-tour(data-tour-id=`${rest.id}`) Book tour now!
+          button.btn.btn--green.span-all-rows#book-rest(data-restid=`${rest.id}`) Book Restaurant now!
         else
-          a.btn.btn--green.span-all-rows(href='/login') Log in to book tour
+          a.btn.btn--green.span-all-rows(href='/login') Log in to book Restaurant
