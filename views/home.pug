@@ -4,6 +4,7 @@ html
     block head
       meta(charset='UTF-8')
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      script(src='https://js.stripe.com/v3/')
       link(rel='stylesheet' href='/css/style.css')
       link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
@@ -33,7 +34,9 @@ html
             form.form.form--home
               .form__group
                 label.form__label(for='Search') Search any city!
-                input#Search.form__input(type='text', value='', placeholder='Enter Location', required)
+                input#Search.form__input(type='text', list='cities', value='', placeholder='Enter Location', required)
+                datalist#cities
+                  option(value="Chandigarh") Chandigarh
               .form__group
                 button.btn-small.btn--green Find Food
       

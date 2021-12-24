@@ -22,7 +22,7 @@ if (homeForm){
   homeForm.addEventListener('submit', e => {
       e.preventDefault();
       const Search = document.getElementById('Search').value;
-      console.log(Search);
+      // console.log(Search);
       findLocation(Search);
   });
 }
@@ -61,7 +61,7 @@ if (userDataForm)
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
+    // console.log(form);
 
     updateSettings(form, 'data');
   });
@@ -88,8 +88,8 @@ if (userPasswordForm)
 if(bookBtn){
   bookBtn.addEventListener('click', e=>{
     const restid = bookBtn.dataset.restid;
-    console.log('Clicked');
-    console.log(restid);
+    // console.log('Clicked');
+    // console.log(restid);
     e.target.textContent = 'Processing...';
     bookRest(restid);
   });

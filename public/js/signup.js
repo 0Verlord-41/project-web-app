@@ -23,6 +23,6 @@ export const signitup = async (name,email,password,passwordConfirm)=>{
     }
     catch(err){
         showAlert('provide with correct details','try again');
-        console.log(err);
+        // console.log(err);
     }
 }

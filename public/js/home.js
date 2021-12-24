@@ -4,7 +4,7 @@ export const findLocation = (input) => {
       if(/Chandigarh/i.test(input)){
         window.setTimeout(()=>{
           location.assign('/over');
-        }, 1000);
+        }, 500);
       }
     } catch (err) {
       console.log('Error');

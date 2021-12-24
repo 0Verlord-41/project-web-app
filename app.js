@@ -31,9 +31,9 @@ app.set('views', path.join(__dirname, 'views'));
 // Implement CORS
 // app.use(cors());
 // Access-Control-Allow-Origin *
-// api.natours.com, front-end natours.com
+// api.natours.com, front-end Licious.com
 // app.use(cors({
-//   origin: 'https://www.natours.com'
+//   origin: 'https://www.Licious.com'
 // }))
 
 // app.options('*', cors());
@@ -46,7 +46,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   // console.log(req.headers);
-
   next();
 });
 
@@ -101,14 +100,13 @@ app.use(
 app.use(compression());
 
 app.use((req, res, next) => {
-    console.log('Hello, its middleware! 🎉');
-    console.log(req.cookies);
+    // console.log('Hello, its middleware! 🎉');
+    // console.log(req.cookies);
     next();
 });
 
 // 3) ROUTES
 app.use('/', viewRoutes);
-
 app.use('/api/v1/restaurants', restaurantRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
